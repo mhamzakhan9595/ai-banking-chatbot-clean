@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 *.so
 .Python
-
+*.pt
+*.pth
 # Virtual environments
 venv/
 env/
@@ -45,3 +46,7 @@ build/
 huggingface/
 *.bin
 *.safetensors
+
+# PyTorch / Transformers cache
+torch/
+transformers_cache/
