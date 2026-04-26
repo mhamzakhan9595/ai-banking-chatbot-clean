@@ -1,6 +1,6 @@
 # 🤖 AI Banking Assistant
 
-## Production-ready AI-powered banking chatbot with LLM, RAG, and API integration.
+## Production-ready AI-powered banking chatbot with LLM, RAG, and API integration
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green.svg)](https://fastapi.tiangolo.com)
@@ -9,113 +9,77 @@
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
-- [Overview](#overview)
-- [Tech Stack](#tech-stack)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Troubleshooting](#troubleshooting)
-- [Future Improvements](#future-improvements)
+* [Overview](#overview)
+* [Tech Stack](#tech-stack)
+* [Features](#features)
+* [Project Structure](#project-structure)
+* [Installation](#installation)
+* [Running the Application](#running-the-application)
+* [API Documentation](#api-documentation)
+* [Future Improvements](#future-improvements)
 
 ---
 
-## Overview
+## 📌 Overview
 
-The **AI Banking Assistant** is a full-stack application that provides intelligent conversational capabilities for banking operations. It uses state-of-the-art language models to understand user queries, retrieve relevant information from documents (RAG), and interact with banking APIs.
+The **AI Banking Assistant** is a full-stack application that enables intelligent conversations for banking operations using LLMs and RAG.
 
-### Key Capabilities
+### 🚀 Key Capabilities
 
-- **Natural Language Conversations** - Powered by Hugging Face LLMs
-- **Document Q&A** - RAG implementation for banking documents
-- **API Integration** - Function calling for banking operations
-- **Chat History** - Persistent conversation storage
-- **Authentication** - JWT-based secure access
-- **Production Ready** - Docker, rate limiting, caching
+* Natural language conversations
+* Document-based Q&A (RAG)
+* API integration
+* Chat memory & context
+* Scalable backend architecture
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 ### Backend
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Python | 3.11.9 | Core language |
-| FastAPI | 0.104.1 | Web framework |
-| Hugging Face Transformers | 4.35.0 | LLM integration |
-| PyTorch | 2.1.0 | ML runtime |
+* Python 3.11
+* FastAPI
+* Hugging Face Transformers
+* PyTorch
 
 ### Frontend
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| React | 18.x | UI framework |
-| Vite | 5.x | Build tool |
-| Axios | Latest | HTTP client |
-| Lucide React | Latest | Icons |
+* React
+* Vite
+* Axios
 
 ### Infrastructure
 
-| Technology | Purpose |
-|------------|---------|
-| PostgreSQL | Structured data (Coming) |
-| FAISS/Chroma | Vector database (Coming) |
-| Docker | Containerization |
-| Redis | Caching (Optional) |
+* Docker
+* Redis (optional)
+* PostgreSQL (planned)
+* FAISS / Chroma (planned)
 
 ---
 
-## Features
+## ✨ Features
 
-### Completed (Days 1-6)
+### ✅ Completed
 
-#### Day 1-2: Core AI & Backend
-- FastAPI server with CORS
-- Hugging Face DialoGPT-small integration
-- Conversation memory and context
-- Error handling and logging
+* FastAPI backend
+* LLM integration
+* Chat UI (React)
+* Streaming responses
+* Rate limiting + caching
 
-#### Day 3: Production Enhancements
-- Response streaming (real-time typing)
-- Rate limiting (10 requests/minute)
-- Response caching (TTL-based)
-- Multiple model support
-- Structured logging
+### 🚧 In Progress
 
-#### Day 4: Clean Architecture
-- Domain-driven design
-- Dependency injection
-- Repository pattern
-- Interface-based design
-- Global error handlers
-
-#### Day 5-6: Frontend & Integration
-- React + Vite setup
-- Chat UI components
-- Streaming response display
-- Typing indicator
-- Full-stack integration
-
-### In Progress (Days 7-14)
-
-- Day 7: GitHub & Documentation
-- Day 8: RAG Setup (Document processing)
-- Day 9: Vector Database (FAISS/Chroma)
-- Day 10: RAG Integration
-- Day 11: PostgreSQL & Chat History
-- Day 12: Authentication (JWT)
-- Day 13: Function Calling (Banking APIs)
-- Day 14: Docker Deployment
+* RAG pipeline
+* Vector DB
+* Authentication
+* Deployment
 
 ---
 
-### Project Structure
+## 🗂 Project Structure (Mermaid Diagram)
 
 ```mermaid
 graph TD
@@ -128,6 +92,7 @@ graph TD
     B1 --> B2[api]
     B2 --> B3[middlewares]
     B2 --> B4[v1]
+
     B4 --> B5[chat.py]
     B4 --> B6[health.py]
     B4 --> B7[models.py]
@@ -138,7 +103,7 @@ graph TD
     B1 --> B11[schemas]
     B1 --> B12[main.py]
 
-    B9 --> D1[entities/chat.py]
+    B9 --> D1[entities]
     B9 --> D2[interfaces]
     B9 --> D3[services]
 
@@ -151,6 +116,69 @@ graph TD
     C1 --> C3[services]
     C1 --> C4[App.jsx]
     C1 --> C5[main.jsx]
+```
 
-    
 ---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+* Python 3.11+
+* Node.js 18+
+* Git
+
+---
+
+### 🔧 Backend Setup
+
+```bash
+git clone https://github.com/yourusername/ai-banking-chatbot.git
+cd ai-banking-chatbot/backend
+
+python -m venv venv
+venv\Scripts\activate
+
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+---
+
+### 💻 Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## ▶️ Running the Application
+
+* Backend → http://localhost:8000
+* Frontend → http://localhost:5173
+
+---
+
+## 📡 API Documentation
+
+* Swagger → http://localhost:8000/docs
+* ReDoc → http://localhost:8000/redoc
+
+---
+
+## 🚀 Future Improvements
+
+* Full RAG system
+* Authentication (JWT)
+* Chat history persistence
+* Docker deployment
+* Model optimization
+
+---
+
+## 📄 License
+
+For educational and portfolio use.
