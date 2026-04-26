@@ -144,13 +144,13 @@ const ChatInterface = () => {
         <div className="status-indicator">
           <span className="status-dot"></span>
           <span>Connected</span>
+          <button style={{ margin: '0 10px' ,color: 'red' ,background: 'lightgray',padding: '5px 15px',border: '1px solid red' }} onClick={clearChat} className="clear-button">
+    Clear Chat
+</button>
         </div>
       </div>
      
-// Add button in header:
-<button onClick={clearChat} className="clear-button">
-    Clear Chat
-</button>
+
       <MessageList messages={messages} isTyping={isTyping} />
       <MessageInput onSendMessage={handleSendMessage} disabled={isTyping} />
     </div>
