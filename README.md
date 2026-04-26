@@ -182,3 +182,16 @@ npm run dev
 ## 📄 License
 
 For educational and portfolio use.
+
+---
+
+## 📸 Demo Screenshots
+
+### Chat UI
+![Chat UI 1](docs/screenshot-1.png)
+
+### Chat Interaction
+![Chat UI 2](docs/screenshot-2.png)
+
+### AI Response
+![Chat UI 3](docs/screenshot-3.png)
