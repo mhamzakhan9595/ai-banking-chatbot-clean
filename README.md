@@ -115,7 +115,9 @@ The **AI Banking Assistant** is a full-stack application that provides intellige
 
 ---
 
-## Project Structure
+### Project Structure
+
+```mermaid
 graph TD
     A[AI Banking Chatbot]
 
@@ -149,7 +151,6 @@ graph TD
     C1 --> C3[services]
     C1 --> C4[App.jsx]
     C1 --> C5[main.jsx]
-
 
     
 ---
