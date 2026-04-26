@@ -1,101 +1,190 @@
 # 🤖 AI Banking Assistant
 
-<div align="center">
-
-**Production-ready AI-powered Banking Chatbot with RAG, Streaming, and Clean Architecture**
+## Production-ready AI-powered banking chatbot with LLM, RAG, and API integration.
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green.svg)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-yellow.svg)](https://huggingface.co)
-[![License](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
-
-</div>
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Quick Start](#quick-start)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
 - [API Documentation](#api-documentation)
 - [Testing](#testing)
 - [Deployment](#deployment)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Troubleshooting](#troubleshooting)
+- [Future Improvements](#future-improvements)
 
 ---
 
-## 🎯 Overview
+## Overview
 
-The **AI Banking Assistant** is a production-ready conversational AI system that provides intelligent banking assistance through:
+The **AI Banking Assistant** is a full-stack application that provides intelligent conversational capabilities for banking operations. It uses state-of-the-art language models to understand user queries, retrieve relevant information from documents (RAG), and interact with banking APIs.
 
-- **Natural Language Understanding** using Hugging Face LLMs
-- **Retrieval-Augmented Generation (RAG)** for document-based Q&A
-- **Real-time Streaming** responses like ChatGPT
-- **Clean Architecture** with dependency injection
-- **Full-stack implementation** with React frontend
+### Key Capabilities
 
----
-
-## ✨ Features
-
-### Core Features
-- 🤖 **AI-Powered Chat** - Natural conversations with LLM
-- 💬 **Real-time Streaming** - Words appear as generated
-- 🧠 **Conversation Memory** - Context-aware responses
-- ⚡ **Smart Caching** - 75% cache hit rate for repeated queries
-- 🚦 **Rate Limiting** - 10 requests/minute to prevent abuse
-- 📝 **Request Logging** - Complete audit trail
-
-### Technical Features
-- 🏗️ **Clean Architecture** - Domain-driven design
-- 💉 **Dependency Injection** - Loose coupling, testable code
-- 🔄 **API Versioning** - Future-proof endpoints
-- 🛡️ **Error Handling** - Global exception handlers
-- 📊 **Health Checks** - Comprehensive system monitoring
-- 🐳 **Docker Ready** - Containerized deployment
-
-### Banking Features (Upcoming)
-- 💰 Account balance queries
-- 📜 Transaction history
-- 💸 Fund transfers
-- 📄 Document Q&A (RAG)
+- **Natural Language Conversations** - Powered by Hugging Face LLMs
+- **Document Q&A** - RAG implementation for banking documents
+- **API Integration** - Function calling for banking operations
+- **Chat History** - Persistent conversation storage
+- **Authentication** - JWT-based secure access
+- **Production Ready** - Docker, rate limiting, caching
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
+
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| Python | 3.11 | Core language |
-| FastAPI | 0.104 | API framework |
-| HuggingFace | 4.35 | LLM integration |
-| PyTorch | 2.1 | ML runtime |
-| Pydantic | 2.5 | Data validation |
-| Uvicorn | 0.24 | ASGI server |
+| Python | 3.11.9 | Core language |
+| FastAPI | 0.104.1 | Web framework |
+| Hugging Face Transformers | 4.35.0 | LLM integration |
+| PyTorch | 2.1.0 | ML runtime |
 
 ### Frontend
+
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| React | 18 | UI framework |
-| Vite | 5 | Build tool |
-| Axios | 1.6 | HTTP client |
-| Lucide React | 0.3 | Icons |
+| React | 18.x | UI framework |
+| Vite | 5.x | Build tool |
+| Axios | Latest | HTTP client |
+| Lucide React | Latest | Icons |
 
 ### Infrastructure
+
 | Technology | Purpose |
 |------------|---------|
-| TTLCache | In-memory caching |
-| PostgreSQL | User data (coming soon) |
-| FAISS | Vector database (coming soon) |
+| PostgreSQL | Structured data (Coming) |
+| FAISS/Chroma | Vector database (Coming) |
 | Docker | Containerization |
+| Redis | Caching (Optional) |
 
 ---
 
-## 🏗️ Architecture
+## Features
+
+### Completed (Days 1-6)
+
+#### Day 1-2: Core AI & Backend
+- FastAPI server with CORS
+- Hugging Face DialoGPT-small integration
+- Conversation memory and context
+- Error handling and logging
+
+#### Day 3: Production Enhancements
+- Response streaming (real-time typing)
+- Rate limiting (10 requests/minute)
+- Response caching (TTL-based)
+- Multiple model support
+- Structured logging
+
+#### Day 4: Clean Architecture
+- Domain-driven design
+- Dependency injection
+- Repository pattern
+- Interface-based design
+- Global error handlers
+
+#### Day 5-6: Frontend & Integration
+- React + Vite setup
+- Chat UI components
+- Streaming response display
+- Typing indicator
+- Full-stack integration
+
+### In Progress (Days 7-14)
+
+- Day 7: GitHub & Documentation
+- Day 8: RAG Setup (Document processing)
+- Day 9: Vector Database (FAISS/Chroma)
+- Day 10: RAG Integration
+- Day 11: PostgreSQL & Chat History
+- Day 12: Authentication (JWT)
+- Day 13: Function Calling (Banking APIs)
+- Day 14: Docker Deployment
+
+---
+
+## Project Structure
+graph TD
+    A[AI Banking Chatbot]
+
+    A --> B[Backend]
+    A --> C[Frontend]
+
+    B --> B1[app]
+    B1 --> B2[api]
+    B2 --> B3[middlewares]
+    B2 --> B4[v1]
+    B4 --> B5[chat.py]
+    B4 --> B6[health.py]
+    B4 --> B7[models.py]
+
+    B1 --> B8[core]
+    B1 --> B9[domain]
+    B1 --> B10[infrastructure]
+    B1 --> B11[schemas]
+    B1 --> B12[main.py]
+
+    B9 --> D1[entities/chat.py]
+    B9 --> D2[interfaces]
+    B9 --> D3[services]
+
+    B10 --> E1[cache]
+    B10 --> E2[llm]
+    B10 --> E3[rate_limit]
+
+    C --> C1[src]
+    C1 --> C2[components]
+    C1 --> C3[services]
+    C1 --> C4[App.jsx]
+    C1 --> C5[main.jsx]
+
+
+    
+---
+
+## Installation
+
+### Prerequisites
+
+- Python 3.11+ (Download from python.org)
+- Node.js 18+ (Download from nodejs.org)
+- Git (Download from git-scm.com)
+- 8GB RAM minimum (16GB recommended for larger models)
+
+### Backend Setup
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/ai-banking-chatbot.git
+cd ai-banking-chatbot
+
+# Create virtual environment
+cd backend
+python -m venv venv
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Copy environment variables
+cp .env.example .env
+
+# Run backend server
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
